@@ -1,0 +1,13 @@
+package com.example.trask_task.service;
+
+import com.example.trask_task.entity.Technology;
+
+import java.util.List;
+
+public interface TechnologyService {
+    public Technology saveTechnology(Technology technology);
+
+    public List<Technology> fetchAllTechnology();
+
+    public Technology fetchTechnology(Long id);
+}

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ApplicantServiceImpl implements ApplicantService {
@@ -15,5 +16,15 @@ public class ApplicantServiceImpl implements ApplicantService {
     @Override
     public List<Applicant> fetchAllApplicants() {
         return applicantRepository.findAll();
+    }
+
+    @Override
+    public Applicant fetchApplicantById(Long id) {
+        return applicantRepository.findById(id).get();
+    }
+
+    @Override
+    public Applicant saveApplicant(Applicant applicant) {
+        return applicantRepository.save(applicant);
     }
 }

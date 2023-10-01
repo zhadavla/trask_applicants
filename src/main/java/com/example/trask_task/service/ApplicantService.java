@@ -9,4 +9,8 @@ import java.util.List;
 public interface ApplicantService {
 
     public List<Applicant> fetchAllApplicants();
+
+    public Applicant fetchApplicantById(Long id);
+
+    public Applicant saveApplicant(Applicant applicant);
 }

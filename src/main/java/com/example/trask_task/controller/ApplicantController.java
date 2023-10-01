@@ -1,20 +1,29 @@
 package com.example.trask_task.controller;
 
 import com.example.trask_task.entity.Applicant;
-import com.example.trask_task.service.ApplicantServiceImpl;
+import com.example.trask_task.service.ApplicantService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 public class ApplicantController {
     @Autowired
-    private ApplicantServiceImpl applicantService;
+    private ApplicantService applicantService;
 
     @GetMapping("/applicant")
-    public List<Applicant> getApplicants() {
+    public List<Applicant> fetchAllApplicants() {
         return applicantService.fetchAllApplicants();
+    }
+
+    @GetMapping("/applicant/{id}")
+    public Applicant fetchApplicantById(@PathVariable("id") Long id) {
+        return applicantService.fetchApplicantById(id);
+    }
+
+    @PostMapping("/applicant")
+    public Applicant saveApplicant(@RequestBody Applicant applicant) {
+        return applicantService.saveApplicant(applicant);
     }
 }

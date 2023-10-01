@@ -1,21 +1,18 @@
 package com.example.trask_task.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.antlr.v4.runtime.misc.NotNull;
-import org.springframework.context.annotation.Primary;
+
+import java.util.Collection;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Applicant {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long applicantId;
@@ -24,4 +21,14 @@ public class Applicant {
     @NotNull
     private String applicantSurname;
 
+    @OneToMany(mappedBy = "applicant")
+    private Collection<ApplicantTechnology> applicantTechnology;
+
+    public Collection<ApplicantTechnology> getApplicantTechnology() {
+        return applicantTechnology;
+    }
+
+    public void setApplicantTechnology(Collection<ApplicantTechnology> applicantTechnology) {
+        this.applicantTechnology = applicantTechnology;
+    }
 }

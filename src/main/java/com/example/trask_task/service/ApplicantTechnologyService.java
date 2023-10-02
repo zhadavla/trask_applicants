@@ -1,5 +1,6 @@
 package com.example.trask_task.service;
 
+import com.example.trask_task.dto.ApplicantWithTechnologiesDTO;
 import com.example.trask_task.entity.Applicant;
 import com.example.trask_task.entity.ApplicantTechnology;
 
@@ -13,4 +14,6 @@ public interface ApplicantTechnologyService {
     public ApplicantTechnology saveApplicantTechnology(ApplicantTechnology applicantTechnology);
 
     public List<ApplicantTechnology> saveApplicantTechnologies(List<ApplicantTechnology> applicantTechnologies);
+
+    public List<ApplicantWithTechnologiesDTO> fetchAllApplicantsWithTechnologies();
 }

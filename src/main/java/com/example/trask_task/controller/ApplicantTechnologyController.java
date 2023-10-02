@@ -1,5 +1,6 @@
 package com.example.trask_task.controller;
 
+import com.example.trask_task.dto.ApplicantWithTechnologiesDTO;
 import com.example.trask_task.entity.Applicant;
 import com.example.trask_task.entity.ApplicantTechnology;
 import com.example.trask_task.entity.Technology;
@@ -15,15 +16,12 @@ public class ApplicantTechnologyController {
     @Autowired
     private ApplicantTechnologyService applicantTechnologyService;
 
-//    @GetMapping
-//    public List<String> fetchAllTechnologiesNotesForApplicant(@RequestBody Applicant applicant) {
-////        List<Technology> applicantTechnologies =
-//        return null;
-//    }
-
+    @GetMapping("/wtf")
+    public List<ApplicantWithTechnologiesDTO> fetchAllApplicantsWithTechnologies(){
+        return applicantTechnologyService.fetchAllApplicantsWithTechnologies();
+    }
     @GetMapping
     public List<String> fetchAllApplicantTechnologies() {
-//        Object[]
         return applicantTechnologyService.fetchAllApplicantTechnologies();
     }
 

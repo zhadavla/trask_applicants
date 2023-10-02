@@ -1,0 +1,200 @@
+POST http://localhost:8080/applicants
+Content-Type: application/json
+
+[
+  {
+    "id": 1,
+    "applicantName": "Bancroft",
+    "applicantSurname": "Endean"
+  },
+  {
+    "id": 2,
+    "applicantName": "Bryn",
+    "applicantSurname": "Swidenbank"
+  },
+  {
+    "id": 3,
+    "applicantName": "Odella",
+    "applicantSurname": "Crichmere"
+  },
+  {
+    "id": 4,
+    "applicantName": "Mari",
+    "applicantSurname": "Dulton"
+  },
+  {
+    "id": 5,
+    "applicantName": "Reggis",
+    "applicantSurname": "Yakobowitz"
+  },
+  {
+    "id": 6,
+    "applicantName": "Warden",
+    "applicantSurname": "Ailsbury"
+  },
+  {
+    "id": 7,
+    "applicantName": "Esmaria",
+    "applicantSurname": "Etter"
+  },
+  {
+    "id": 8,
+    "applicantName": "Auberon",
+    "applicantSurname": "Casseldine"
+  },
+  {
+    "id": 9,
+    "applicantName": "Dona",
+    "applicantSurname": "Lysons"
+  },
+  {
+    "id": 10,
+    "applicantName": "Raddy",
+    "applicantSurname": "Snoxall"
+  },
+  {
+    "id": 11,
+    "applicantName": "Nicolle",
+    "applicantSurname": "Hulme"
+  },
+  {
+    "id": 12,
+    "applicantName": "Rose",
+    "applicantSurname": "Nerger"
+  },
+  {
+    "id": 13,
+    "applicantName": "Germaine",
+    "applicantSurname": "Mynett"
+  },
+  {
+    "id": 14,
+    "applicantName": "Eadith",
+    "applicantSurname": "Hincks"
+  },
+  {
+    "id": 15,
+    "applicantName": "Gertruda",
+    "applicantSurname": "Greenall"
+  },
+  {
+    "id": 16,
+    "applicantName": "Cathleen",
+    "applicantSurname": "Loads"
+  },
+  {
+    "id": 17,
+    "applicantName": "Burt",
+    "applicantSurname": "Halpin"
+  },
+  {
+    "id": 18,
+    "applicantName": "Elsinore",
+    "applicantSurname": "Rubra"
+  },
+  {
+    "id": 19,
+    "applicantName": "Griswold",
+    "applicantSurname": "Jachimak"
+  },
+  {
+    "id": 20,
+    "applicantName": "Cirillo",
+    "applicantSurname": "Eldrid"
+  },
+  {
+    "id": 21,
+    "applicantName": "Barth",
+    "applicantSurname": "Heister"
+  },
+  {
+    "id": 22,
+    "applicantName": "Bethina",
+    "applicantSurname": "Abramovic"
+  },
+  {
+    "id": 23,
+    "applicantName": "Ermanno",
+    "applicantSurname": "Manus"
+  },
+  {
+    "id": 24,
+    "applicantName": "Darill",
+    "applicantSurname": "Elwill"
+  },
+  {
+    "id": 25,
+    "applicantName": "Friedrich",
+    "applicantSurname": "Hildred"
+  },
+  {
+    "id": 26,
+    "applicantName": "Cammy",
+    "applicantSurname": "Malarkey"
+  },
+  {
+    "id": 27,
+    "applicantName": "Ferdy",
+    "applicantSurname": "Boame"
+  },
+  {
+    "id": 28,
+    "applicantName": "Lavinia",
+    "applicantSurname": "Poulgreen"
+  },
+  {
+    "id": 29,
+    "applicantName": "Aime",
+    "applicantSurname": "Wright"
+  },
+  {
+    "id": 30,
+    "applicantName": "Elston",
+    "applicantSurname": "Kenlin"
+  },
+  {
+    "id": 31,
+    "applicantName": "Helenka",
+    "applicantSurname": "Maher"
+  },
+  {
+    "id": 32,
+    "applicantName": "Miltie",
+    "applicantSurname": "Heape"
+  },
+  {
+    "id": 33,
+    "applicantName": "Pierette",
+    "applicantSurname": "Ceschi"
+  },
+  {
+    "id": 34,
+    "applicantName": "Palm",
+    "applicantSurname": "Kitchingham"
+  },
+  {
+    "id": 35,
+    "applicantName": "Shalna",
+    "applicantSurname": "Williment"
+  },
+  {
+    "id": 36,
+    "applicantName": "Kean",
+    "applicantSurname": "Seagar"
+  },
+  {
+    "id": 37,
+    "applicantName": "Brook",
+    "applicantSurname": "Simnell"
+  },
+  {
+    "id": 38,
+    "applicantName": "Ignace",
+    "applicantSurname": "Pierro"
+  },
+  {
+    "id": 39,
+    "applicantName": "Mychal",
+    "applicantSurname": "Ledgley"
+  }
+]

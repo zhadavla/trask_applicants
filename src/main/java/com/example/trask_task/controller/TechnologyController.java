@@ -8,19 +8,28 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/technology")
 public class TechnologyController {
     @Autowired
     private TechnologyService technologyService;
-    @PostMapping("/technology")
-    public Technology saveTechnology(@RequestBody Technology technology){
+
+    @PostMapping
+    public Technology saveTechnology(@RequestBody Technology technology) {
         return technologyService.saveTechnology(technology);
     }
-    @GetMapping("/technology")
-    public List<Technology> fetchAllTechnology(){
+
+    @GetMapping
+    public List<Technology> fetchAllTechnology() {
         return technologyService.fetchAllTechnology();
     }
-    @GetMapping("/technology/{id}")
-    public Technology fetchTechnology(@PathVariable("id") Long id){
+
+    @GetMapping("/{id}")
+    public Technology fetchTechnology(@PathVariable("id") Long id) {
         return technologyService.fetchTechnology(id);
+    }
+
+    @PostMapping("/many")
+    public List<Technology> saveTechnologies(@RequestBody List<Technology> technologies) {
+        return technologyService.saveTechnologies(technologies);
     }
 }

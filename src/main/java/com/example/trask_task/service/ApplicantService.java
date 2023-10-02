@@ -13,4 +13,6 @@ public interface ApplicantService {
     public Applicant fetchApplicantById(Long id);
 
     public Applicant saveApplicant(Applicant applicant);
+
+    public List<Applicant> saveApplicants(List<Applicant> applicants);
 }

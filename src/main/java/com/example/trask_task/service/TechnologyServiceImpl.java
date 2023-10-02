@@ -8,9 +8,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class TechnologyServiceImpl implements TechnologyService{
+public class TechnologyServiceImpl implements TechnologyService {
     @Autowired
     private TechnologyRepository technologyRepository;
+
     @Override
     public Technology saveTechnology(Technology technology) {
         return technologyRepository.save(technology);
@@ -24,5 +25,10 @@ public class TechnologyServiceImpl implements TechnologyService{
     @Override
     public Technology fetchTechnology(Long id) {
         return technologyRepository.findById(id).get();
+    }
+
+    @Override
+    public List<Technology> saveTechnologies(List<Technology> technologies) {
+        return technologyRepository.saveAll(technologies);
     }
 }

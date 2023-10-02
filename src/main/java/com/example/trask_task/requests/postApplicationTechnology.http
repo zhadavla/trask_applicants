@@ -1,11 +1,11 @@
-POST http://localhost:8080/applicant-technology
+POST http://localhost:8080/applicant_technology
 Content-Type: application/json
 
 {
   "applicant": {
-    "applicantId": 5
+    "applicantId": 208
   },
     "technology": {
-        "technologyId": 1
+        "technologyId": 107
     }
 }

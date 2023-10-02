@@ -27,4 +27,9 @@ public class ApplicantServiceImpl implements ApplicantService {
     public Applicant saveApplicant(Applicant applicant) {
         return applicantRepository.save(applicant);
     }
+
+    @Override
+    public List<Applicant> saveApplicants(List<Applicant> applicants) {
+        return applicantRepository.saveAll(applicants);
+    }
 }

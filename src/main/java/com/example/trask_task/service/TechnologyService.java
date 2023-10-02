@@ -10,4 +10,6 @@ public interface TechnologyService {
     public List<Technology> fetchAllTechnology();
 
     public Technology fetchTechnology(Long id);
+
+    public List<Technology> saveTechnologies(List<Technology> technologies);
 }

@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.antlr.v4.runtime.misc.NotNull;
 
-import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Data
@@ -20,15 +20,4 @@ public class Applicant {
     private String applicantName;
     @NotNull
     private String applicantSurname;
-
-    @OneToMany(mappedBy = "applicant")
-    private Collection<ApplicantTechnology> applicantTechnology;
-
-    public Collection<ApplicantTechnology> getApplicantTechnology() {
-        return applicantTechnology;
-    }
-
-    public void setApplicantTechnology(Collection<ApplicantTechnology> applicantTechnology) {
-        this.applicantTechnology = applicantTechnology;
-    }
 }

@@ -2,6 +2,6 @@ POST http://localhost:8080/applicant
 Content-Type: application/json
 
 {
-  "applicantName": "Antony",
-    "applicantSurname": "T"
+  "applicantName": "gFSDGS",
+    "applicantSurname": "sdg"
 }

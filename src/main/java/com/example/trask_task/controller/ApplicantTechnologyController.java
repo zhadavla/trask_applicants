@@ -1,5 +1,6 @@
 package com.example.trask_task.controller;
 
+import com.example.trask_task.entity.Applicant;
 import com.example.trask_task.entity.ApplicantTechnology;
 import com.example.trask_task.service.ApplicantTechnologyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,14 +15,21 @@ public class ApplicantTechnologyController {
     private ApplicantTechnologyService applicantTechnologyService;
 
     @GetMapping
-    public List<ApplicantTechnology> fetchAllApplicantTechnologies() {
+    public List<String> fetchAllApplicantTechnologies() {
+//        Object[]
         return applicantTechnologyService.fetchAllApplicantTechnologies();
     }
-
 
     @PostMapping
     public ApplicantTechnology saveApplicantTechnology(@RequestBody ApplicantTechnology applicantTechnology) {
         return applicantTechnologyService.saveApplicantTechnology(applicantTechnology);
     }
 
+    @PostMapping("many")
+    public List<ApplicantTechnology> saveApplicantTechnology(@RequestBody List<ApplicantTechnology> applicantTechnologies) {
+        return applicantTechnologyService.saveApplicantTechnologies(applicantTechnologies);
+    }
+
+//    @GetMapping
+//    public List<ApplicantTechnology>
 }

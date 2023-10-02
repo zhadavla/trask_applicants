@@ -2,5 +2,5 @@ POST http://localhost:8080/technology
 Content-Type: application/json
 
 {
-  "technologyName": "soft skills"
+  "technologyName": "English"
 }

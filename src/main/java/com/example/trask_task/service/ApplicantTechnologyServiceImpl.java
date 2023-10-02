@@ -1,5 +1,6 @@
 package com.example.trask_task.service;
 
+import com.example.trask_task.entity.Applicant;
 import com.example.trask_task.entity.ApplicantTechnology;
 import com.example.trask_task.repository.ApplicantRepository;
 import com.example.trask_task.repository.ApplicantTechnologyRepo;
@@ -14,12 +15,17 @@ public class ApplicantTechnologyServiceImpl implements ApplicantTechnologyServic
     private ApplicantTechnologyRepo applicantTechnologyRepo;
 
     @Override
-    public List<ApplicantTechnology> fetchAllApplicantTechnologies() {
-        return applicantTechnologyRepo.findAll();
+    public List<String> fetchAllApplicantTechnologies() {
+        return applicantTechnologyRepo.fetchApplicantsTechnologies();
     }
 
     @Override
     public ApplicantTechnology saveApplicantTechnology(ApplicantTechnology applicantTechnology) {
         return applicantTechnologyRepo.save(applicantTechnology);
+    }
+
+    @Override
+    public List<ApplicantTechnology> saveApplicantTechnologies(List<ApplicantTechnology> applicantTechnologies) {
+        return applicantTechnologyRepo.saveAll(applicantTechnologies);
     }
 }

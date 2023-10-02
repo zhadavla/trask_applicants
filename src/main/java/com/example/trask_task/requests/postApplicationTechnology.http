@@ -1,11 +1,14 @@
-POST http://localhost:8080/applicant_technology
+POST http://localhost:8080/applicant_technology/many
 Content-Type: application/json
 
-{
+
+  {
   "applicant": {
-    "applicantId": 208
+    "applicantId": 402
   },
     "technology": {
-        "technologyId": 107
-    }
-}
+        "technologyId": 359
+    },
+    "note": "Finish 42 core projects",
+    "level": "Expert"
+  }

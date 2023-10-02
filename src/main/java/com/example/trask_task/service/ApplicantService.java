@@ -1,5 +1,6 @@
 package com.example.trask_task.service;
 
+import com.example.trask_task.dto.ApplicantDTO;
 import com.example.trask_task.entity.Applicant;
 import org.springframework.stereotype.Service;
 
@@ -15,4 +16,6 @@ public interface ApplicantService {
     public Applicant saveApplicant(Applicant applicant);
 
     public List<Applicant> saveApplicants(List<Applicant> applicants);
+
+    public List<ApplicantDTO> fetchAllApplicantsDto();
 }

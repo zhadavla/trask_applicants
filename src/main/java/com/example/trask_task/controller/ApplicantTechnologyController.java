@@ -2,6 +2,7 @@ package com.example.trask_task.controller;
 
 import com.example.trask_task.entity.Applicant;
 import com.example.trask_task.entity.ApplicantTechnology;
+import com.example.trask_task.entity.Technology;
 import com.example.trask_task.service.ApplicantTechnologyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,12 @@ import java.util.List;
 public class ApplicantTechnologyController {
     @Autowired
     private ApplicantTechnologyService applicantTechnologyService;
+
+//    @GetMapping
+//    public List<String> fetchAllTechnologiesNotesForApplicant(@RequestBody Applicant applicant) {
+////        List<Technology> applicantTechnologies =
+//        return null;
+//    }
 
     @GetMapping
     public List<String> fetchAllApplicantTechnologies() {

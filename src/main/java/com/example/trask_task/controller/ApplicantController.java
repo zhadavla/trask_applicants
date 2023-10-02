@@ -1,5 +1,6 @@
 package com.example.trask_task.controller;
 
+import com.example.trask_task.dto.ApplicantDTO;
 import com.example.trask_task.entity.Applicant;
 import com.example.trask_task.service.ApplicantService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,10 @@ public class ApplicantController {
     @Autowired
     private ApplicantService applicantService;
 
+    @GetMapping("/dto")
+    public List<ApplicantDTO> fetchAllApplicantsDto(){
+        return applicantService.fetchAllApplicantsDto();
+    }
     @GetMapping("/applicant")
     public List<Applicant> fetchAllApplicants() {
         return applicantService.fetchAllApplicants();

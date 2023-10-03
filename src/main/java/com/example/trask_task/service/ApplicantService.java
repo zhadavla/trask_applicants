@@ -18,4 +18,10 @@ public interface ApplicantService {
     public List<Applicant> saveApplicants(List<Applicant> applicants);
 
     public List<ApplicantDTO> fetchAllApplicantsDto();
+
+    public String deleteApplicantById(Long applicantId);
+
+    public String deleteApplicantByName(String applicantName);
+
+    public Applicant updateApplicant(Long applicantId, Applicant applicant);
 }

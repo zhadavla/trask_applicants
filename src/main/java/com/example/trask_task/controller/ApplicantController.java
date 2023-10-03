@@ -17,7 +17,7 @@ public class ApplicantController {
     public List<ApplicantDTO> fetchAllApplicantsDto(){
         return applicantService.fetchAllApplicantsDto();
     }
-    @GetMapping("/applicant")
+    @GetMapping("/applicants")
     public List<Applicant> fetchAllApplicants() {
         return applicantService.fetchAllApplicants();
     }
@@ -37,4 +37,19 @@ public class ApplicantController {
         return applicantService.saveApplicants(applicants);
     }
 
+    @DeleteMapping("/applicant/{id}")
+    public String deleteApplicantById(@PathVariable("id") Long applicantId){
+        return applicantService.deleteApplicantById(applicantId);
+    }
+
+    @DeleteMapping("applicant/name/{name}")
+    public String deleteApplicantByName(@PathVariable("name") String applicantName){
+        return applicantService.deleteApplicantByName(applicantName);
+    }
+
+    @PutMapping("applicant/id/{id}")
+    public Applicant updateApplicant(@PathVariable("id") Long applicantId,
+                                     @RequestBody Applicant applicant){
+        return applicantService.updateApplicant(applicantId, applicant);
+    }
 }

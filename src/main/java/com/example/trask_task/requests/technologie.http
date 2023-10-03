@@ -1,0 +1,22 @@
+### Seznam technologii
+GET http://localhost:8080/technology
+
+### Pridani technologie
+POST http://localhost:8080/technology
+Content-Type: application/json
+
+{
+    "technologyName": "Jira"
+
+}
+
+### Odebirani technologie
+DELETE http://localhost:8080/technology/id/402
+
+### Uprava technologie
+PUT http://localhost:8080/technology/id/453
+Content-Type: application/json
+
+{
+    "technologyName": "not-Jira"
+}

@@ -12,4 +12,9 @@ public interface TechnologyService {
     public Technology fetchTechnology(Long id);
 
     public List<Technology> saveTechnologies(List<Technology> technologies);
+
+    public Technology updateTechnology(Long technologyId, Technology technology);
+
+    String removeTechnology(Long technologyId);
+
 }

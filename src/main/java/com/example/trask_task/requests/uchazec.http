@@ -1,0 +1,26 @@
+### Seznam uchazecu
+GET http://localhost:8080/applicants
+
+### Detail se seznamem technologii
+GET http://localhost:8080/applicant_technology
+
+### Pridani noveho uchazece
+POST http://localhost:8080/applicant
+Content-Type: application/json
+
+{
+  "applicantName": "Vladyslav",
+  "applicantSurname": "Zhadan"
+}
+
+### Odebirani uchazece
+DELETE http://localhost:8080/applicant/454
+
+### Uprava uchazece
+PUT http://localhost:8080/applicant/id/452
+Content-Type: application/json
+
+{
+  "applicantName": "Vladyslav",
+  "applicantSurname": "Zhadan"
+}

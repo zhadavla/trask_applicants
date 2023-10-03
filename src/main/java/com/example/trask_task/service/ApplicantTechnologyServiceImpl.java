@@ -12,7 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class ApplicantTechnologyServiceImpl implements ApplicantTechnologyService{
@@ -38,31 +40,38 @@ public class ApplicantTechnologyServiceImpl implements ApplicantTechnologyServic
     @Override
     public List<ApplicantWithTechnologiesDTO> fetchAllApplicantsWithTechnologies() {
         List<String> queryResults = applicantTechnologyRepo.fetchApplicantsTechnologies();
-        List<String> splitedStr = null;
+        Map<String, ApplicantWithTechnologiesDTO> applicantMap = new HashMap<>();
+
         for (String string : queryResults) {
-            splitedStr = List.of(string.split(","));
-            for (int i = 0; i < splitedStr.size(); i++) {
-                logger.info("i = " + i + "splitted[i] = " + splitedStr.get(i));
-            }
+            List<String> splitedStr = List.of(string.split(","));
+            String applicantName = splitedStr.get(0);
+            String applicantSurname = splitedStr.get(1);
+
+            // Create a unique key for each applicant (e.g., combining name and surname)
+            String applicantKey = applicantName + " " + applicantSurname;
+
+            // Retrieve or create the DTO for the current applicant
+            ApplicantWithTechnologiesDTO applicantDTO = applicantMap.computeIfAbsent(applicantKey, k -> {
+                ApplicantWithTechnologiesDTO newDTO = new ApplicantWithTechnologiesDTO();
+                newDTO.setApplicantName(applicantName);
+                newDTO.setApplicantSurname(applicantSurname);
+                newDTO.setApplicantTechnologies(new ArrayList<>());
+                return newDTO;
+            });
+
+            // Add the technology to the current applicant's list
+            TechnologyNoteLevelDTO technologyNoteLevelDTO = new TechnologyNoteLevelDTO();
+            technologyNoteLevelDTO.setTechnologyName(splitedStr.get(2));
+            technologyNoteLevelDTO.setNote(splitedStr.get(3));
+            technologyNoteLevelDTO.setLevel(splitedStr.get(4));
+
+            applicantDTO.getApplicantTechnologies().add(technologyNoteLevelDTO);
         }
-        List<ApplicantWithTechnologiesDTO> applicants = new ArrayList<>();
-        ApplicantWithTechnologiesDTO applicantWithTechnologiesDTO = new ApplicantWithTechnologiesDTO();
 
-        applicantWithTechnologiesDTO.setApplicantName(splitedStr.get(0));
-        applicantWithTechnologiesDTO.setApplicantSurname(splitedStr.get(1));
+        // Convert the map values to a list
+        List<ApplicantWithTechnologiesDTO> applicants = new ArrayList<>(applicantMap.values());
 
-        TechnologyNoteLevelDTO technologyNoteLevelDTO = new TechnologyNoteLevelDTO();
-        List<TechnologyNoteLevelDTO> technologyNoteLevelDTOList = new ArrayList<>();
-
-        technologyNoteLevelDTO.setTechnologyName(splitedStr.get(2));
-        technologyNoteLevelDTO.setNote(splitedStr.get(3));
-        technologyNoteLevelDTO.setLevel(splitedStr.get(4));
-
-        technologyNoteLevelDTOList.add(technologyNoteLevelDTO);
-
-        applicantWithTechnologiesDTO.setApplicantTechnologies(technologyNoteLevelDTOList);
-
-        applicants.add(applicantWithTechnologiesDTO);
         return applicants;
     }
+
 }

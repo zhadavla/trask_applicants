@@ -8,9 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-import java.util.Optional;
+import java.util.Objects;
 
 @Service
 public class ApplicantServiceImpl implements ApplicantService {
@@ -55,5 +54,42 @@ public class ApplicantServiceImpl implements ApplicantService {
         applicantDTO.setTechnologyNoteLevelDTOList(technologyNoteLevelDTOList);
         applicantDTOS.add(applicantDTO);
         return applicantDTOS;
+    }
+
+    @Override
+    public String deleteApplicantById(Long applicantId) {
+        if (applicantRepository.existsById(applicantId)){
+            applicantRepository.deleteById(applicantId);
+            return "Applicant deleted!";
+        }
+        return "There's no such applicant!";
+    }
+
+    @Override
+    public String deleteApplicantByName(String applicantName) {
+        Applicant applicant = applicantRepository.findApplicantByApplicantName(applicantName);
+        if (applicant == null)
+            return "No applicant found";
+
+
+        applicantRepository.deleteById(applicant.getApplicantId());
+        return "Applicant deleted";
+    }
+
+    @Override
+    public Applicant updateApplicant(Long applicantId, Applicant applicant) {
+        Applicant appDb = applicantRepository.findById(applicantId).get();
+
+        // change only different values
+        if (Objects.nonNull(applicant.getApplicantName()) &&
+                !"".equalsIgnoreCase(applicant.getApplicantName())) {
+            appDb.setApplicantName(applicant.getApplicantName());
+        }
+        if (Objects.nonNull(applicant.getApplicantSurname()) &&
+                !"".equalsIgnoreCase(applicant.getApplicantSurname())) {
+            appDb.setApplicantSurname(applicant.getApplicantSurname());
+        }
+
+        return applicantRepository.save(appDb);
     }
 }

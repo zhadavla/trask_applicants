@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+// It's probably working not as it supposed to
+// because it cannot find applicantId
 public class ApplicantTechnology {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

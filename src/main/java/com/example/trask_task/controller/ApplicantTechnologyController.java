@@ -16,13 +16,9 @@ public class ApplicantTechnologyController {
     @Autowired
     private ApplicantTechnologyService applicantTechnologyService;
 
-    @GetMapping("/wtf")
+    @GetMapping
     public List<ApplicantWithTechnologiesDTO> fetchAllApplicantsWithTechnologies(){
         return applicantTechnologyService.fetchAllApplicantsWithTechnologies();
-    }
-    @GetMapping
-    public List<String> fetchAllApplicantTechnologies() {
-        return applicantTechnologyService.fetchAllApplicantTechnologies();
     }
 
     @PostMapping

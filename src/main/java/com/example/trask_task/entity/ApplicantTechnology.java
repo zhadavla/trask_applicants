@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.antlr.v4.runtime.misc.NotNull;
 
 @Entity
 @Data
@@ -17,13 +18,10 @@ public class ApplicantTechnology {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long applicationTechnologyId;
 
-    @ManyToOne
-    @JoinColumn(name = "applicant_id", nullable = false)
-    private Applicant applicant;
-
-    @ManyToOne
-    @JoinColumn(name = "technology_id", nullable = false)
-    private Technology technology;
+    @NotNull
+    private Long applicant_id;
+    @NotNull
+    private Long technology_id;
 
     @Nullable
     private String level;

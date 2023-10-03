@@ -46,7 +46,6 @@ public class ApplicantController {
     public String deleteApplicantByName(@PathVariable("name") String applicantName){
         return applicantService.deleteApplicantByName(applicantName);
     }
-
     @PutMapping("applicant/id/{id}")
     public Applicant updateApplicant(@PathVariable("id") Long applicantId,
                                      @RequestBody Applicant applicant){

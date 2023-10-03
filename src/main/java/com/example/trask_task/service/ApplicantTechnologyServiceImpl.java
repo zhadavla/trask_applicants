@@ -74,4 +74,9 @@ public class ApplicantTechnologyServiceImpl implements ApplicantTechnologyServic
         return applicants;
     }
 
+    @Override
+    public List<ApplicantTechnology> fetchAllApplTech() {
+        return applicantTechnologyRepo.findAll();
+    }
+
 }

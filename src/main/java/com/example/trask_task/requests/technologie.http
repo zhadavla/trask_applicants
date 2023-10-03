@@ -2,13 +2,26 @@
 GET http://localhost:8080/technology
 
 ### Pridani technologie
-POST http://localhost:8080/technology
+POST http://localhost:8080/technology/many
 Content-Type: application/json
 
-{
+[
+  {
     "technologyName": "Jira"
-
-}
+  },
+  {
+    "technologyName": "Java"
+  },
+  {
+    "technologyName": "Spring"
+  },
+  {
+    "technologyName": "GIT"
+  },
+  {
+    "technologyName": "C-language"
+  }
+]
 
 ### Odebirani technologie
 DELETE http://localhost:8080/technology/id/402

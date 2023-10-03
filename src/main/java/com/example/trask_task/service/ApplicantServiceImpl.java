@@ -80,6 +80,8 @@ public class ApplicantServiceImpl implements ApplicantService {
     public Applicant updateApplicant(Long applicantId, Applicant applicant) {
         Applicant appDb = applicantRepository.findById(applicantId).get();
 
+        if (Objects.nonNull(applicant.getApplicantId()))
+            appDb.setApplicantId(applicant.getApplicantId());
         // change only different values
         if (Objects.nonNull(applicant.getApplicantName()) &&
                 !"".equalsIgnoreCase(applicant.getApplicantName())) {

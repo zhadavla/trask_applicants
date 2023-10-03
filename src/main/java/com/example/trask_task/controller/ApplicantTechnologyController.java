@@ -16,6 +16,10 @@ public class ApplicantTechnologyController {
     @Autowired
     private ApplicantTechnologyService applicantTechnologyService;
 
+    @GetMapping("/just_get")
+    public List<ApplicantTechnology> fetchAllApplTech(){
+        return applicantTechnologyService.fetchAllApplTech();
+    }
     @GetMapping
     public List<ApplicantWithTechnologiesDTO> fetchAllApplicantsWithTechnologies(){
         return applicantTechnologyService.fetchAllApplicantsWithTechnologies();
@@ -30,7 +34,4 @@ public class ApplicantTechnologyController {
     public List<ApplicantTechnology> saveApplicantTechnology(@RequestBody List<ApplicantTechnology> applicantTechnologies) {
         return applicantTechnologyService.saveApplicantTechnologies(applicantTechnologies);
     }
-
-//    @GetMapping
-//    public List<ApplicantTechnology>
 }

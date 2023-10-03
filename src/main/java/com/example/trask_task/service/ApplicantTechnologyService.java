@@ -16,4 +16,6 @@ public interface ApplicantTechnologyService {
     public List<ApplicantTechnology> saveApplicantTechnologies(List<ApplicantTechnology> applicantTechnologies);
 
     public List<ApplicantWithTechnologiesDTO> fetchAllApplicantsWithTechnologies();
+
+    List<ApplicantTechnology> fetchAllApplTech();
 }

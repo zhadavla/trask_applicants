@@ -1,26 +1,108 @@
+### Pridani noveho uchazece
+POST http://localhost:8080/applicants
+Content-Type: application/json
+
+[
+  {
+    "applicantName": "Rabbi",
+    "applicantSurname": "Casterton"
+  },
+  {
+    "applicantName": "Winnifred",
+    "applicantSurname": "Beevor"
+  },
+  {
+    "applicantName": "Fons",
+    "applicantSurname": "Reijmers"
+  },
+  {
+    "applicantName": "Bronnie",
+    "applicantSurname": "McGow"
+  },
+  {
+    "applicantName": "Talyah",
+    "applicantSurname": "Claeskens"
+  },
+  {
+    "applicantName": "Stanislaw",
+    "applicantSurname": "MacCahee"
+  },
+  {
+    "applicantName": "Gradey",
+    "applicantSurname": "Bern"
+  },
+  {
+    "applicantName": "Ray",
+    "applicantSurname": "Dmitr"
+  },
+  {
+    "applicantName": "Estel",
+    "applicantSurname": "Aleevy"
+  },
+  {
+    "applicantName": "Ottilie",
+    "applicantSurname": "Whightman"
+  },
+  {
+    "applicantName": "Ulysses",
+    "applicantSurname": "McKew"
+  },
+  {
+    "applicantName": "Hobie",
+    "applicantSurname": "Drewe"
+  },
+  {
+    "applicantName": "Lucais",
+    "applicantSurname": "Cowper"
+  },
+  {
+    "applicantName": "Olwen",
+    "applicantSurname": "Caslin"
+  },
+  {
+    "applicantName": "Rocky",
+    "applicantSurname": "O'Codihie"
+  },
+  {
+    "applicantName": "Thea",
+    "applicantSurname": "Northin"
+  },
+  {
+    "applicantName": "Pippa",
+    "applicantSurname": "Habbema"
+  },
+  {
+    "applicantName": "Saxon",
+    "applicantSurname": "McKelvie"
+  }
+]
+
 ### Seznam uchazecu
 GET http://localhost:8080/applicants
 
-### Detail se seznamem technologii
-GET http://localhost:8080/applicant_technology
-
-### Pridani noveho uchazece
-POST http://localhost:8080/applicant
-Content-Type: application/json
-
-{
-  "applicantName": "Vladyslav",
-  "applicantSurname": "Zhadan"
-}
-
 ### Odebirani uchazece
-DELETE http://localhost:8080/applicant/454
+DELETE http://localhost:8080/applicant/669
 
 ### Uprava uchazece
-PUT http://localhost:8080/applicant/id/452
+PUT http://localhost:8080/applicant/id/668
 Content-Type: application/json
 
 {
-  "applicantName": "Vladyslav",
-  "applicantSurname": "Zhadan"
+    "applicantName": "Vladyslav",
+    "applicantSurname": "Zhadan"
 }
+
+### Pridani technologie uchazeci
+# it is necessary to have applicant_id and technology_id in the database
+POST http://localhost:8080/applicant_technology
+Content-Type: application/json
+
+{
+    "applicant_id": 665,
+    "technology_id": 505,
+    "level": "Junior",
+    "note": "no note"
+}
+
+### Detail vsech uchazecu se seznamem technologii
+GET http://localhost:8080/applicant_technology

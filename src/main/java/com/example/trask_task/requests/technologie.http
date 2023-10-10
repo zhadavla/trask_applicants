@@ -1,8 +1,8 @@
 ### Seznam technologii
-GET http://localhost:8080/technology
+GET http://localhost:8080/fetchAllTechnology
 
 ### Pridani technologie
-POST http://localhost:8080/technology/many
+POST http://localhost:8080/saveTechnologies
 Content-Type: application/json
 
 [
@@ -24,10 +24,10 @@ Content-Type: application/json
 ]
 
 ### Odebirani technologie
-DELETE http://localhost:8080/technology/id/402
+DELETE http://localhost:8080/removeTechnology/id/556
 
 ### Uprava technologie
-PUT http://localhost:8080/technology/id/453
+PUT http://localhost:8080/updateTechnology/id/555
 Content-Type: application/json
 
 {

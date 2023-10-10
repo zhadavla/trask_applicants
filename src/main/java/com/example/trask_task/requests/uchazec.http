@@ -1,5 +1,5 @@
 ### Pridani noveho uchazece
-POST http://localhost:8080/applicants
+POST http://localhost:8080/saveApplicants
 Content-Type: application/json
 
 [
@@ -78,13 +78,13 @@ Content-Type: application/json
 ]
 
 ### Seznam uchazecu
-GET http://localhost:8080/applicants
+GET http://localhost:8080/fetchAllApplicants
 
 ### Odebirani uchazece
-DELETE http://localhost:8080/applicant/669
+DELETE http://localhost:8080/deleteApplicantById/id/718
 
 ### Uprava uchazece
-PUT http://localhost:8080/applicant/id/668
+PUT http://localhost:8080/updateApplicant/id/717
 Content-Type: application/json
 
 {
@@ -94,15 +94,15 @@ Content-Type: application/json
 
 ### Pridani technologie uchazeci
 # it is necessary to have applicant_id and technology_id in the database
-POST http://localhost:8080/applicant_technology
+POST http://localhost:8080/saveApplicantTechnology
 Content-Type: application/json
 
 {
-    "applicant_id": 665,
-    "technology_id": 505,
+    "applicant_id": 717,
+    "technology_id": 553,
     "level": "Junior",
     "note": "no note"
 }
 
 ### Detail vsech uchazecu se seznamem technologii
-GET http://localhost:8080/applicant_technology
+GET http://localhost:8080/fetchAllApplicantsWithTechnologies

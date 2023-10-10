@@ -11,27 +11,26 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/applicant_technology") // Base URL for this controller
 public class ApplicantTechnologyController {
     @Autowired
     private ApplicantTechnologyService applicantTechnologyService;
 
-    @GetMapping("/just_get")
+    @GetMapping("/fetchAllApplTech")
     public List<ApplicantTechnology> fetchAllApplTech(){
         return applicantTechnologyService.fetchAllApplTech();
     }
-    @GetMapping
+    @GetMapping("/fetchAllApplicantsWithTechnologies")
     public List<ApplicantWithTechnologiesDTO> fetchAllApplicantsWithTechnologies(){
         return applicantTechnologyService.fetchAllApplicantsWithTechnologies();
     }
 
-    @PostMapping
+    @PostMapping("/saveApplicantTechnology")
     public ApplicantTechnology saveApplicantTechnology(@RequestBody ApplicantTechnology applicantTechnology) {
         return applicantTechnologyService.saveApplicantTechnology(applicantTechnology);
     }
 
-    @PostMapping("many")
-    public List<ApplicantTechnology> saveApplicantTechnology(@RequestBody List<ApplicantTechnology> applicantTechnologies) {
+    @PostMapping("/saveApplicantTechnologies")
+    public List<ApplicantTechnology> saveApplicantTechnologies(@RequestBody List<ApplicantTechnology> applicantTechnologies) {
         return applicantTechnologyService.saveApplicantTechnologies(applicantTechnologies);
     }
 }
